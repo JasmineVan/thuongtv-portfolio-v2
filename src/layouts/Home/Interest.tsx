@@ -9,7 +9,7 @@ const Interest = () => {
         <h1 className="text-white">
           Contact me now, and I am ready to do what you want
         </h1>
-        <div className="flex flex-row justify-center items-center w-1/6 p-4 rounded-xl border-2 border-white">
+        <div className="flex flex-row justify-center items-center w-1/6 p-4 rounded-xl border-2 border-white hover:translate-all">
           <h1 className="font-semibold cursor-pointer text-white">
             Contact now
           </h1>

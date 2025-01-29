@@ -4,7 +4,6 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import SiteImage from "../../assets/Home/jasmine-trans.png";
 
 const Experience = () => {
   return (
@@ -18,6 +17,19 @@ const Experience = () => {
         {/* List of experienc */}
         <div className="w-full flex items-start">
           <Timeline className="w-full" position="alternate">
+          <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot />              
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <div>
+                  <h1 className="text-xl italic text-secondary">
+                    From the past
+                  </h1>
+                </div>
+              </TimelineContent>
+            </TimelineItem>
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot />
@@ -27,7 +39,7 @@ const Experience = () => {
                 <div>
                   <h1 className="text-xl italic text-secondary">2015 - 2018</h1>
                   <h1 className="text-2xl font-bold text-primary">
-                    Nguyen Huu Tho High school
+                    Nguyen Huu Tho High School
                   </h1>
                   <p className="text-justify text-primary">
                     Nguyen Huu Tho School was officially established in 1961 and
@@ -115,7 +127,7 @@ const Experience = () => {
               <TimelineContent>
                 <div>
                   <h1 className="text-xl italic text-secondary">
-                    To the future...
+                    To the future
                   </h1>
                 </div>
               </TimelineContent>

@@ -7,6 +7,9 @@ import FixedMenu from "../layouts/Home/FixedMenu";
 import About from "../layouts/Home/About";
 import Experience from "../layouts/Home/Experience";
 import Interest from "../layouts/Home/Interest";
+import Role from "../layouts/Home/Role";
+import Project from "../layouts/Home/Project";
+import Blog from "../layouts/Home/Blog";
 
 const Home: React.FC = () => {
   return (
@@ -37,6 +40,11 @@ const Home: React.FC = () => {
         />
       </div>
       {/* End divider */}
+      <Role/>
+      {/* Project */}
+      <Project/>
+      {/* Blog */}
+      <Blog/>
       {/* Interest */}
       <Interest />
       {/* Footer */}

@@ -24,7 +24,7 @@ const About = () => {
         <div className="w-1/2 h-full flex flex-col gap-4">
           <h1 className="text-3xl font-bold text-secondary">ABOUT</h1>
           <h1 className="text-2xl font-semibold text-primary">
-            Business Analyst
+            Thuong Trinh Van
           </h1>
           <p className="text-lg text-justify text-primary">
             I am a highly skilled software engineer, a graduate of Ton Duc Thang
