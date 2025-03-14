@@ -7,10 +7,10 @@ const Interest = () => {
           Interested in working with me?
         </h1>
         <h1 className="text-white">
-          Contact me now, and I am ready to do what you want
+          Teamwork makes dream work!
         </h1>
-        <div className="flex flex-row justify-center items-center w-1/6 p-4 rounded-xl border-2 border-white hover:translate-all">
-          <h1 className="font-semibold cursor-pointer text-white">
+        <div className="group flex flex-row justify-center items-center w-1/6 p-4 rounded-xl border-2 border-white hover:bg-white">
+          <h1 className="font-semibold cursor-pointer text-white group-hover:text-secondary">
             Contact now
           </h1>
         </div>

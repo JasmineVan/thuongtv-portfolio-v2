@@ -5,6 +5,8 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Footer = () => {
+  const menuItems = ["Home", "About", "Project", "Blog", "Career", "Contact"];
+
   return (
     <div className="bg-white w-full h-auto flex flex-col justify-center items-center">
       <div className="w-10/12 flex flex-row justify-between py-16">
@@ -24,24 +26,14 @@ const Footer = () => {
         </div>
         {/* Right group */}
         <div className="flex flex-row justify-between gap-12">
-          <h1 className="text-sm text-primary hover:cursor-pointer font-semibold">
-            Home
-          </h1>
-          <h1 className="text-sm text-primary hover:cursor-pointer font-semibold">
-            About
-          </h1>
-          <h1 className="text-sm text-primary hover:cursor-pointer font-semibold">
-            Project
-          </h1>
-          <h1 className="text-sm text-primary hover:cursor-pointer font-semibold">
-            Blog
-          </h1>
-          <h1 className="text-sm text-primary hover:cursor-pointer font-semibold">
-            Career
-          </h1>
-          <h1 className="text-sm text-primary hover:cursor-pointer font-semibold">
-            Contact
-          </h1>
+          {menuItems.map((item, index) => (
+            <h1
+              key={index}
+              className="text-sm text-primary font-semibold cursor-pointer hover:text-secondary"
+            >
+              {item}
+            </h1>
+          ))}
         </div>
       </div>
 
@@ -60,10 +52,10 @@ const Footer = () => {
           <h1 className="font-semibold text-sm text-primary">
             Copyright © 2025 Trinh Van Thuong. All rights reserved.
           </h1>
-          <h1 className="font-semibold text-sm text-primary hover:cursor-pointer">
+          <h1 className="font-semibold text-sm text-primary hover:cursor-pointer  hover:text-secondary">
             Privacy Policy
           </h1>
-          <h1 className="font-semibold text-sm text-primary hover:cursor-pointer">
+          <h1 className="font-semibold text-sm text-primary hover:cursor-pointer hover:text-secondary">
             Terms of Use
           </h1>
         </div>

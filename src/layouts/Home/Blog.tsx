@@ -15,11 +15,11 @@ const Blog = () => {
                 {/* Blog cards */}
                 <div className="flex flex-row gap-6 w-full justify-between">
                     {/* Blog 1 */}
-                    <div className="flex flex-col gap-2 w-1/3 h-auto">
+                    <div className="flex flex-col gap-2 w-1/3 h-auto group hover:cursor-pointer">
                         <img
                             src={Blog1}
                             alt="Blog1"
-                            className="w-full h-auto object-fill rounded-xl transition-transform duration-300 transform hover:scale-105"
+                            className="w-full h-auto object-fill rounded-xl transition-transform duration-300 transform group-hover:scale-105"
                         />
                         <div className="flex flex-row items-center">
                             <img
@@ -31,18 +31,18 @@ const Blog = () => {
                                 Thuong Trinh Van
                             </h1>
                         </div>
-                        <h1 className="text-2xl font-bold text-primary hover:text-secondary">
+                        <h1 className="text-2xl font-bold text-primary group-hover:text-secondary">
                             Breaking Down the Basics of Cloud Computing
                         </h1>
                         <p className="text-justify text-primary">
                             Understanding Cloud Infrastructure and Its Role in Modern Tech Solutions
                         </p>
-                        <h1 className="font-semibold cursor-pointer text-primary hover:text-secondary">
+                        <h1 className="font-semibold cursor-pointer text-primary group-hover:text-secondary">
                             Read more ➝
                         </h1>
                     </div>
                     {/* Blog 2 */}
-                    <div className="flex flex-col gap-2 w-1/3 h-auto">
+                    <div className="flex flex-col gap-2 w-1/3 h-auto group hover:cursor-pointer">
                         <img
                             src={Blog2}
                             alt="Blog2"
@@ -58,18 +58,18 @@ const Blog = () => {
                                 Thuong Trinh Van
                             </h1>
                         </div>
-                        <h1 className="text-2xl font-bold text-primary hover:text-secondary">
+                        <h1 className="text-2xl font-bold text-primary group-hover:text-secondary">
                             The Future of Artificial Intelligence in Everyday Life
                         </h1>
                         <p className="text-justify text-primary">
-                            How AI is Transforming Industries, from Healthcare to Finance
+                            How AI is Transforming Industries, from Healthcare to Finance now a day.
                         </p>
-                        <h1 className="font-semibold cursor-pointer text-primary hover:text-secondary">
+                        <h1 className="font-semibold cursor-pointer text-primary group-hover:text-secondary">
                             Read more ➝
                         </h1>
                     </div>
                     {/* Blog 3 */}
-                    <div className="flex flex-col gap-2 w-1/3 h-auto">
+                    <div className="flex flex-col gap-2 w-1/3 h-auto group hover:cursor-pointer">
                         <img
                             src={Blog3}
                             alt="Blog3"
@@ -85,13 +85,13 @@ const Blog = () => {
                                 Thuong Trinh Van
                             </h1>
                         </div>
-                        <h1 className="text-2xl font-bold text-primary hover:text-secondary">
+                        <h1 className="text-2xl font-bold text-primary group-hover:text-secondary">
                             The Evolution of Technology: From Web 1.0 to Web 3.0
                         </h1>
                         <p className="text-justify text-primary">
                             A Journey Through the Key Innovations Shaping the Internet of Tomorrow
                         </p>
-                        <h1 className="font-semibold cursor-pointer text-primary hover:text-secondary">
+                        <h1 className="font-semibold cursor-pointer text-primary group-hover:text-secondary">
                             Read more ➝
                         </h1>
                     </div>

@@ -49,6 +49,8 @@ const Home: React.FC = () => {
       <Interest />
       {/* Footer */}
       <Footer />
+
+      {/* Additional stuff */}
       {/* Fixed menu */}
       <FixedMenu />
     </div>
