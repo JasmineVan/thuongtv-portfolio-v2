@@ -7,7 +7,6 @@ import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { ReactNode } from 'react';
-import AboutMeImage from "../../assets/Home/aboutme.jpg";
 
 const projects = [
     {
