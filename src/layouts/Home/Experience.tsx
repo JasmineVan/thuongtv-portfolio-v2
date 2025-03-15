@@ -42,9 +42,9 @@ const TimelineEntry = ({ period, title, description }: typeof experiences[0]) =>
     </TimelineSeparator>
     <TimelineContent>
       <div>
-        <h1 className="text-xl italic text-secondary">{period}</h1>
-        {title && <h1 className="text-2xl font-bold text-primary">{title}</h1>}
-        {description && <p className="text-justify text-primary">{description}</p>}
+        <h1 className="text-xl italic text-secondary font-primary">{period}</h1>
+        {title && <h1 className="text-2xl font-bold text-primary font-primary">{title}</h1>}
+        {description && <p className="text-justify text-primary font-primary">{description}</p>}
       </div>
     </TimelineContent>
   </TimelineItem>
@@ -54,8 +54,8 @@ const Experience = () => {
   return (
     <div className="flex justify-center py-32">
       <div className="w-10/12 flex flex-col items-center gap-4">
-        <h1 className="text-3xl font-bold text-secondary">MY JOURNEY OF HAPPINESS</h1>
-        <h1 className="text-2xl font-semibold text-primary">Experiences</h1>
+        <h1 className="text-3xl font-bold text-secondary font-secondary">MY JOURNEY OF HAPPINESS</h1>
+        <h1 className="text-4xl font-semibold text-primary font-tertiary">Experiences</h1>
         <Timeline className="w-full" position="alternate">
           {experiences.map((exp, index) => (
             <TimelineEntry key={index} {...exp} />

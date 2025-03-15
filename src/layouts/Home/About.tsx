@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
-import SiteImage from "../../assets/Home/jasmine-trans.png";
+import AboutMeImage from "../../assets/Home/aboutme.jpg";
 
 const About = () => {
+  const handleDownload = (): void => {
+    const pdfUrl: string = "/public/ThuongTrinhVan_BA_Resume.pdf"; // File in public/files/
+    const link: HTMLAnchorElement = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "ThuongTrinhVan_BA_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div className="flex justify-center py-32">
       {/* Layout 12 cols, 10 working cols */}
@@ -14,19 +23,19 @@ const About = () => {
           className="w-1/2 h-full flex flex-col justify-start"
         >
           <img
-            src={SiteImage}
-            alt="SiteImage"
-            className="w-2/3 h-auto object-fill"
+            src={AboutMeImage}
+            alt="AboutMeImage"
+            className="w-2/3 h-auto object-fill rounded-full"
           />
           {/* <h1 className="text-3xl font-semibold text-primary">TRINH VAN THUONG</h1> */}
         </motion.div>
         {/* Right group */}
         <div className="w-1/2 h-full flex flex-col gap-4">
-          <h1 className="text-3xl font-bold text-secondary">ABOUT</h1>
-          <h1 className="text-2xl font-semibold text-primary">
-            Thuong Trinh Van
+          <h1 className="text-3xl font-bold text-secondary font-secondary">ABOUT ME</h1>
+          <h1 className="text-4xl font-semibold text-primary font-tertiary">
+            Trinh Van Thuong (Jasmine)
           </h1>
-          <p className="text-lg text-justify text-primary">
+          <p className="text-lg text-justify text-primary font-primary">
             I am a highly skilled software engineer, a graduate of Ton Duc Thang
             University, currently contributing my expertise at Hoang Thanh
             Capital & Partners Co.LTD. Experience in analyzing business needs,
@@ -35,15 +44,15 @@ const About = () => {
             and business stakeholders for project alignment and successful
             outcomes.
           </p>
-          <p className="text-lg text-justify text-primary">
+          <p className="text-lg text-justify text-primary font-primary">
             As business analyst role, I specialize in crafting innovative
             applications that cater to diverse industries. My experience with
             Hoang Thanh Capital & Partners Co.LTD has honed my abilities to
             deliver tailored solutions for projects.
           </p>
-          <div className="flex flex-row justify-center items-center bg-secondary w-1/4 p-4 rounded-xl">
-            <h1 className="font-semibold cursor-pointer text-white">
-              See more ➝
+          <div className="group flex flex-row justify-center items-center bg-secondary w-1/4 p-4 rounded-xl border-2 border-transparent hover:bg-white hover:border-secondary">
+            <h1 onClick={handleDownload} className="font-semibold cursor-pointer text-white font-primary group-hover:text-secondary">
+              Resume
             </h1>
           </div>
         </div>

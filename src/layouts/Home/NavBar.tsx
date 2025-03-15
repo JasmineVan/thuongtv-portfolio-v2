@@ -29,7 +29,7 @@ const NavBar = () => {
           {navItems.map((item, index) => (
             <h1
               key={index}
-              className="text-base text-primary font-semibold hover:cursor-pointer hover:text-secondary"
+              className="text-base text-primary font-semibold hover:cursor-pointer hover:text-secondary font-primary"
             >
               {item}
             </h1>
