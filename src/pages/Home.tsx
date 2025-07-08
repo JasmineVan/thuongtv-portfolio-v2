@@ -22,22 +22,22 @@ const Home: React.FC = () => {
       <About />
       {/* Start divider */}
       <div className="flex justify-center">
-        <Divider
+        {/* <Divider
           variant="middle"
           flexItem
           style={{ background: "#38745a", width: "60%" }}
-        />
+        /> */}
       </div>
       {/* End divider */}
       {/* Experience */}
       <Experience />
       {/* Start divider */}
       <div className="flex justify-center">
-        <Divider
+        {/* <Divider
           variant="middle"
           flexItem
           style={{ background: "#38745a", width: "60%" }}
-        />
+        /> */}
       </div>
       {/* End divider */}
       <Role/>

@@ -2,6 +2,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import { ReactNode } from "react";
+import Geo3 from "../../assets/Geometry/Geo3.svg";
 
 const roles = [
     {
@@ -39,7 +40,12 @@ const RoleComponent = ({ icon, position, description }: typeof roles[0] & {icon:
 
 const Role = () => {
     return (
-        <div className="flex justify-center py-32">
+            <div
+              className="flex justify-center py-32 bg-no-repeat bg-cover bg-center"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo3})`,
+              }}
+            >
             {/* Layout 12 cols, 10 working cols */}
             <div className="w-10/12 h-auto flex flex-col items-center justify-between gap-4">
                 <h1 className="text-3xl font-bold text-secondary font-secondary">

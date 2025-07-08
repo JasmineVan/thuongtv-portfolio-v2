@@ -4,6 +4,7 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import Geo4 from "../../assets/Geometry/Geo4.svg";
 
 const experiences = [
   { period: "From the past", title: "", description: "" },
@@ -34,7 +35,11 @@ const experiences = [
   { period: "To the future", title: "", description: "" },
 ];
 
-const TimelineEntry = ({ period, title, description }: typeof experiences[0]) => (
+const TimelineEntry = ({
+  period,
+  title,
+  description,
+}: (typeof experiences)[0]) => (
   <TimelineItem>
     <TimelineSeparator>
       <TimelineDot />
@@ -43,8 +48,16 @@ const TimelineEntry = ({ period, title, description }: typeof experiences[0]) =>
     <TimelineContent>
       <div>
         <h1 className="text-xl italic text-secondary font-primary">{period}</h1>
-        {title && <h1 className="text-2xl font-bold text-primary font-primary">{title}</h1>}
-        {description && <p className="text-justify text-primary font-primary">{description}</p>}
+        {title && (
+          <h1 className="text-2xl font-bold text-primary font-primary">
+            {title}
+          </h1>
+        )}
+        {description && (
+          <p className="text-justify text-primary font-primary">
+            {description}
+          </p>
+        )}
       </div>
     </TimelineContent>
   </TimelineItem>
@@ -52,10 +65,19 @@ const TimelineEntry = ({ period, title, description }: typeof experiences[0]) =>
 
 const Experience = () => {
   return (
-    <div className="flex justify-center py-32">
+    <div
+      className="flex justify-center py-32 bg-no-repeat bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo4})`,
+      }}
+    >
       <div className="w-10/12 flex flex-col items-center gap-4">
-        <h1 className="text-3xl font-bold text-secondary font-secondary">MY JOURNEY OF HAPPINESS</h1>
-        <h1 className="text-4xl font-semibold text-primary font-tertiary">Experiences</h1>
+        <h1 className="text-3xl font-bold text-secondary font-secondary">
+          MY JOURNEY OF HAPPINESS
+        </h1>
+        <h1 className="text-4xl font-semibold text-primary font-tertiary">
+          Experiences
+        </h1>
         <Timeline className="w-full" position="alternate">
           {experiences.map((exp, index) => (
             <TimelineEntry key={index} {...exp} />

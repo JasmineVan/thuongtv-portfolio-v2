@@ -49,14 +49,14 @@ const Footer = () => {
       <div className="w-10/12 flex flex-row justify-between pt-4 pb-16">
         {/* Left group */}
         <div className="flex flex-row gap-8 items-center">
-          <h1 className="font-semibold text-sm text-primary font-primary">
+          <h1 className="font-light text-sm text-primary font-primary">
             Copyright © 2025 Trinh Van Thuong. All rights reserved.
           </h1>
-          <h1 className="font-semibold text-sm text-primary hover:cursor-pointer  hover:text-secondary font-primary">
-            Privacy Policy
+          <h1 className="font-light text-sm text-primary hover:cursor-pointer  hover:text-secondary font-primary">
+            Email: thuongtrinh.work@gmail.com
           </h1>
-          <h1 className="font-semibold text-sm text-primary hover:cursor-pointer hover:text-secondary font-primary">
-            Terms of Use
+          <h1 className="font-light text-sm text-primary hover:cursor-pointer hover:text-secondary font-primary">
+            Phone: (+84) 345 282 532
           </h1>
         </div>
         {/* Right group */}
