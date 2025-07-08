@@ -1,4 +1,3 @@
-import Divider from "@mui/material/Divider";
 import React from "react";
 import NavBar from "../layouts/Home/NavBar";
 import Carousel from "../layouts/Home/Carousel";
