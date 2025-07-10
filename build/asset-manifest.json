@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/thuongtv-portfolio-v2/static/css/main.60b8c6d7.css",
-    "main.js": "/thuongtv-portfolio-v2/static/js/main.4681523b.js",
+    "main.js": "/thuongtv-portfolio-v2/static/js/main.cf3f09fc.js",
     "static/media/Geo1.svg": "/thuongtv-portfolio-v2/static/media/Geo1.0c632db4aa3af209e47725cebb758f8d.svg",
     "static/media/Geo5.svg": "/thuongtv-portfolio-v2/static/media/Geo5.b64e6d2a1b1c3dd032936b413432820d.svg",
     "static/media/ca3.jpg": "/thuongtv-portfolio-v2/static/media/ca3.6092c066af697550a2d5.jpg",
@@ -15,12 +15,13 @@
     "static/media/blog2.jpg": "/thuongtv-portfolio-v2/static/media/blog2.ce654728342e07f7241e.jpg",
     "static/media/jasmine-trans.png": "/thuongtv-portfolio-v2/static/media/jasmine-trans.dbb367205bc3ade74f12.png",
     "static/media/jasmine.jpeg": "/thuongtv-portfolio-v2/static/media/jasmine.4a4f1fe5c1607581a507.jpeg",
+    "static/media/Geo6.svg": "/thuongtv-portfolio-v2/static/media/Geo6.f675353b205e2fe908d6499521e2c671.svg",
     "index.html": "/thuongtv-portfolio-v2/index.html",
     "main.60b8c6d7.css.map": "/thuongtv-portfolio-v2/static/css/main.60b8c6d7.css.map",
-    "main.4681523b.js.map": "/thuongtv-portfolio-v2/static/js/main.4681523b.js.map"
+    "main.cf3f09fc.js.map": "/thuongtv-portfolio-v2/static/js/main.cf3f09fc.js.map"
   },
   "entrypoints": [
     "static/css/main.60b8c6d7.css",
-    "static/js/main.4681523b.js"
+    "static/js/main.cf3f09fc.js"
   ]
 }

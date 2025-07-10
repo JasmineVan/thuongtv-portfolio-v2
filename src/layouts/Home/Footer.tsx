@@ -3,12 +3,18 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Geo6 from "../../assets/Geometry/Geo6.svg";
 
 const Footer = () => {
   const menuItems = ["Home", "About", "Project", "Blog", "Career", "Contact"];
 
   return (
-    <div className="bg-white w-full h-auto flex flex-col justify-center items-center">
+    <div
+      className="w-full h-auto flex flex-col justify-center items-center bg-no-repeat bg-fill bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo6})`,
+      }}
+    >
       <div className="w-10/12 flex flex-row justify-between py-16">
         {/* Left group */}
         <div className="flex flex-row gap-12 items-center">
