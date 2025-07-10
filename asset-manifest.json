@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/thuongtv-portfolio-v2/static/css/main.a47a4dc4.css",
-    "main.js": "/thuongtv-portfolio-v2/static/js/main.2e9ad510.js",
+    "main.css": "/thuongtv-portfolio-v2/static/css/main.60b8c6d7.css",
+    "main.js": "/thuongtv-portfolio-v2/static/js/main.cf3f09fc.js",
+    "static/media/Geo1.svg": "/thuongtv-portfolio-v2/static/media/Geo1.0c632db4aa3af209e47725cebb758f8d.svg",
+    "static/media/Geo5.svg": "/thuongtv-portfolio-v2/static/media/Geo5.b64e6d2a1b1c3dd032936b413432820d.svg",
     "static/media/ca3.jpg": "/thuongtv-portfolio-v2/static/media/ca3.6092c066af697550a2d5.jpg",
     "static/media/ca1.jpg": "/thuongtv-portfolio-v2/static/media/ca1.4d59f793863a87d01b0f.jpg",
     "static/media/ca2.jpg": "/thuongtv-portfolio-v2/static/media/ca2.17a74d09e9d5f934da3b.jpg",
     "static/media/blog3.jpg": "/thuongtv-portfolio-v2/static/media/blog3.6e193fcca7243775570c.jpg",
     "static/media/blog1.jpg": "/thuongtv-portfolio-v2/static/media/blog1.6d2bd32a7ea462181f29.jpg",
+    "static/media/Geo3.svg": "/thuongtv-portfolio-v2/static/media/Geo3.ad6a844bc79dc2a2a7631f287a517a8e.svg",
+    "static/media/Geo4.svg": "/thuongtv-portfolio-v2/static/media/Geo4.5c9ef8d3d1429fcaf30dd92232a7e9b8.svg",
     "static/media/aboutme.jpg": "/thuongtv-portfolio-v2/static/media/aboutme.2324dcfb34ba3c7b19d8.jpg",
     "static/media/blog2.jpg": "/thuongtv-portfolio-v2/static/media/blog2.ce654728342e07f7241e.jpg",
     "static/media/jasmine-trans.png": "/thuongtv-portfolio-v2/static/media/jasmine-trans.dbb367205bc3ade74f12.png",
     "static/media/jasmine.jpeg": "/thuongtv-portfolio-v2/static/media/jasmine.4a4f1fe5c1607581a507.jpeg",
+    "static/media/Geo6.svg": "/thuongtv-portfolio-v2/static/media/Geo6.f675353b205e2fe908d6499521e2c671.svg",
     "index.html": "/thuongtv-portfolio-v2/index.html",
-    "main.a47a4dc4.css.map": "/thuongtv-portfolio-v2/static/css/main.a47a4dc4.css.map",
-    "main.2e9ad510.js.map": "/thuongtv-portfolio-v2/static/js/main.2e9ad510.js.map"
+    "main.60b8c6d7.css.map": "/thuongtv-portfolio-v2/static/css/main.60b8c6d7.css.map",
+    "main.cf3f09fc.js.map": "/thuongtv-portfolio-v2/static/js/main.cf3f09fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.a47a4dc4.css",
-    "static/js/main.2e9ad510.js"
+    "static/css/main.60b8c6d7.css",
+    "static/js/main.cf3f09fc.js"
   ]
 }
