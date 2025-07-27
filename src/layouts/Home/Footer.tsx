@@ -12,7 +12,7 @@ const Footer = () => {
     <div
       className="w-full h-auto flex flex-col justify-center items-center bg-no-repeat bg-fill bg-center"
       style={{
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo6})`,
+        // backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo6})`,
       }}
     >
       <div className="w-10/12 flex flex-row justify-between py-16">

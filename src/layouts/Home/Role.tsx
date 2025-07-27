@@ -43,7 +43,7 @@ const Role = () => {
             <div
               className="flex justify-center py-32 bg-no-repeat bg-cover bg-center"
               style={{
-                backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo3})`,
+                // backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo3})`,
               }}
             >
             {/* Layout 12 cols, 10 working cols */}

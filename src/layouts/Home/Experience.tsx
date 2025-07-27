@@ -5,6 +5,8 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Geo4 from "../../assets/Geometry/Geo4.svg";
+import BnW1 from "../../assets/BnW/BnW1.jpg";
+
 
 const experiences = [
   { period: "From the past", title: "", description: "" },
@@ -68,10 +70,10 @@ const Experience = () => {
     <div
       className="flex justify-center py-32 bg-no-repeat bg-cover bg-center"
       style={{
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo4})`,
+        backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${BnW1})`,
       }}
     >
-      <div className="w-10/12 flex flex-col items-center gap-4">
+      <div className="w-10/12 flex flex-col items-center gap-4 glassmorphism p-6 rounded-2xl shadow-lg border border-white/20 backdrop-blur-md bg-white/10">
         <h1 className="text-3xl font-bold text-secondary font-secondary">
           MY JOURNEY OF HAPPINESS
         </h1>
