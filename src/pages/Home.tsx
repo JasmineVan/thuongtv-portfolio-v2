@@ -12,8 +12,6 @@ import Blog from "../layouts/Home/Blog";
 import CubeScrollWrapper from "../components/CubeScrollWrapper";
 
 const Home: React.FC = () => {
-  const [isCubeMode, setIsCubeMode] = useState(true); // toggle between modes
-
   const sections = [
     <Carousel key="carousel" />,
     <About key="about" />,
@@ -28,30 +26,12 @@ const Home: React.FC = () => {
   return (
     <div>
       <NavBar />
-
-      {/* Toggle Switch */}
-      <div className="fixed top-5 right-5 z-50 bg-white rounded-md p-2 shadow-lg">
-        <label className="flex items-center space-x-2 text-sm">
-          <span>Cube Scroll</span>
-          <input
-            type="checkbox"
-            checked={isCubeMode}
-            onChange={() => setIsCubeMode(!isCubeMode)}
-          />
-        </label>
+      <CubeScrollWrapper sections={sections} />
+      <div className="">
+        {sections.map((section, idx) => (
+          <div key={idx}>{section}</div>
+        ))}
       </div>
-
-      {/* Conditional Layout */}
-      {isCubeMode ? (
-        <CubeScrollWrapper sections={sections} />
-      ) : (
-        <div className="">
-          {sections.map((section, idx) => (
-            <div key={idx}>{section}</div>
-          ))}
-        </div>
-      )}
-
       <FixedMenu />
     </div>
   );

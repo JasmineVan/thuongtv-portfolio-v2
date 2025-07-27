@@ -7,102 +7,102 @@ const Blog = () => {
   return (
     <div className="flex justify-center pt-32">
       {/* Layout 12 cols, 10 working cols */}
-      <div className="w-10/12 h-auto flex flex-col items-center justify-between gap-4">
-        <h1 className="text-3xl font-bold text-secondary font-secondary">
+      <div className="flex h-auto w-10/12 flex-col items-center justify-between gap-4">
+        <h1 className="font-secondary text-3xl font-bold text-secondary">
           STATE-OF-THE-ART BLOG
         </h1>
-        <h1 className="text-4xl font-semibold text-primary font-tertiary">
+        <h1 className="font-tertiary text-4xl font-semibold text-primary">
           Technical blog
         </h1>
         {/* Blog cards */}
-        <div className="flex flex-row gap-6 w-full justify-between">
+        <div className="flex w-full flex-row justify-between gap-6">
           {/* Blog 1 */}
-          <div className="flex flex-col gap-2 w-1/3 h-auto group hover:cursor-pointer">
+          <div className="group flex h-auto w-1/3 flex-col gap-2 hover:cursor-pointer">
             <img
               src={Blog1}
               alt="Blog1"
-              className="w-full h-auto object-fill rounded-xl transition-transform duration-300 transform group-hover:scale-105"
+              className="h-auto w-full transform rounded-xl object-fill transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-row items-center">
               <img
                 src={Author}
                 alt="Author"
-                className="w-1/5 h-auto object-fill rounded-xl"
+                className="h-auto w-1/5 rounded-xl object-fill"
               />
-              <h1 className="text-lg font-semibold text-primary font-primary">
+              <h1 className="font-primary text-lg font-semibold text-primary">
                 Thuong Trinh Van
               </h1>
             </div>
-            <h1 className="text-2xl font-bold text-primary group-hover:text-secondary font-primary">
+            <h1 className="font-primary text-2xl font-bold text-primary group-hover:text-secondary">
               Breaking Down the Basics of Cloud Computing
             </h1>
-            <p className="text-justify text-primary font-primary">
+            <p className="text-justify font-primary text-primary">
               Understanding Cloud Infrastructure and Its Role in Modern Tech
               Solutions
             </p>
-            <h1 className="font-semibold cursor-pointer text-primary group-hover:text-secondary font-primary">
+            <h1 className="cursor-pointer font-primary font-semibold text-primary group-hover:text-secondary">
               Read more ➝
             </h1>
           </div>
           {/* Blog 2 */}
-          <div className="flex flex-col gap-2 w-1/3 h-auto group hover:cursor-pointer">
+          <div className="group flex h-auto w-1/3 flex-col gap-2 hover:cursor-pointer">
             <img
               src={Blog2}
               alt="Blog2"
-              className="w-full h-auto object-fill rounded-xl transition-transform duration-300 transform group-hover:scale-105"
+              className="h-auto w-full transform rounded-xl object-fill transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-row items-center">
               <img
                 src={Author}
                 alt="Author"
-                className="w-1/5 h-auto object-fill rounded-xl"
+                className="h-auto w-1/5 rounded-xl object-fill"
               />
-              <h1 className="text-lg font-semibold text-primary font-primary">
+              <h1 className="font-primary text-lg font-semibold text-primary">
                 Thuong Trinh Van
               </h1>
             </div>
-            <h1 className="text-2xl font-bold text-primary group-hover:text-secondary font-primary">
+            <h1 className="font-primary text-2xl font-bold text-primary group-hover:text-secondary">
               The Future of Artificial Intelligence in Everyday Life
             </h1>
-            <p className="text-justify text-primary font-primary">
+            <p className="text-justify font-primary text-primary">
               How AI is Transforming Industries, from Healthcare to Finance now
               a day.
             </p>
-            <h1 className="font-semibold cursor-pointer text-primary group-hover:text-secondary font-primary">
+            <h1 className="cursor-pointer font-primary font-semibold text-primary group-hover:text-secondary">
               Read more ➝
             </h1>
           </div>
           {/* Blog 3 */}
-          <div className="flex flex-col gap-2 w-1/3 h-auto group hover:cursor-pointer">
+          <div className="group flex h-auto w-1/3 flex-col gap-2 hover:cursor-pointer">
             <img
               src={Blog3}
               alt="Blog3"
-              className="w-full h-auto object-fill rounded-xl transition-transform duration-300 transform group-hover:scale-105"
+              className="h-auto w-full transform rounded-xl object-fill transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-row items-center">
               <img
                 src={Author}
                 alt="Author"
-                className="w-1/5 h-auto object-fill rounded-xl"
+                className="h-auto w-1/5 rounded-xl object-fill"
               />
-              <h1 className="text-lg font-semibold text-primary font-primary">
+              <h1 className="font-primary text-lg font-semibold text-primary">
                 Thuong Trinh Van
               </h1>
             </div>
-            <h1 className="text-2xl font-bold text-primary group-hover:text-secondary font-primary">
+            <h1 className="font-primary text-2xl font-bold text-primary group-hover:text-secondary">
               The Evolution of Technology: From Web 1.0 to Web 3.0
             </h1>
-            <p className="text-justify text-primary font-primary">
+            <p className="text-justify font-primary text-primary">
               A Journey Through the Key Innovations Shaping the Internet of
               Tomorrow
             </p>
-            <h1 className="font-semibold cursor-pointer text-primary group-hover:text-secondary font-primary">
+            <h1 className="cursor-pointer font-primary font-semibold text-primary group-hover:text-secondary">
               Read more ➝
             </h1>
           </div>
         </div>
-        <div className="group flex flex-row justify-center items-center bg-secondary border-2 border-transparent hover:bg-white hover:border-secondary w-1/8 p-4 rounded-xl">
-          <h1 className="font-semibold cursor-pointer text-white font-primary group-hover:text-secondary">
+        <div className="w-1/8 group flex flex-row items-center justify-center rounded-xl border-2 border-transparent bg-secondary p-4 hover:border-secondary hover:bg-white">
+          <h1 className="cursor-pointer font-primary font-semibold text-white group-hover:text-secondary">
             View all blog
           </h1>
         </div>

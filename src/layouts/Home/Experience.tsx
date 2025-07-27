@@ -4,18 +4,16 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import Geo4 from "../../assets/Geometry/Geo4.svg";
-import BnW1 from "../../assets/BnW/BnW1.jpg";
-
+import BnW1 from "../../assets/BnW/BnW8.jpg";
 
 const experiences = [
   { period: "From the past", title: "", description: "" },
-  {
-    period: "2015 - 2018",
-    title: "Nguyen Huu Tho High School",
-    description:
-      "Nguyen Huu Tho School was officially established in 1961 and has gone through many stages of development with many generations of students. The school has a rich tradition of nearly 60 years of history.",
-  },
+  // {
+  //   period: "2015 - 2018",
+  //   title: "Nguyen Huu Tho High School",
+  //   description:
+  //     "Nguyen Huu Tho School was officially established in 1961 and has gone through many stages of development with many generations of students. The school has a rich tradition of nearly 60 years of history.",
+  // },
   {
     period: "2018 - 2022",
     title: "Ton Duc Thang University",
@@ -44,19 +42,19 @@ const TimelineEntry = ({
 }: (typeof experiences)[0]) => (
   <TimelineItem>
     <TimelineSeparator>
-      <TimelineDot />
+      <TimelineDot className="bg-secondary" />
       <TimelineConnector />
     </TimelineSeparator>
     <TimelineContent>
       <div>
-        <h1 className="text-xl italic text-secondary font-primary">{period}</h1>
+        <h1 className="font-primary text-xl italic text-secondary">{period}</h1>
         {title && (
-          <h1 className="text-2xl font-bold text-primary font-primary">
+          <h1 className="font-primary text-2xl font-bold text-white drop-shadow">
             {title}
           </h1>
         )}
         {description && (
-          <p className="text-justify text-primary font-primary">
+          <p className="text-justify font-primary text-white/90">
             {description}
           </p>
         )}
@@ -68,19 +66,22 @@ const TimelineEntry = ({
 const Experience = () => {
   return (
     <div
-      className="flex justify-center py-32 bg-no-repeat bg-cover bg-center"
+      className="flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20"
       style={{
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${BnW1})`,
+        backgroundImage: `linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(${BnW1})`,
       }}
     >
-      <div className="w-10/12 flex flex-col items-center gap-4 glassmorphism p-6 rounded-2xl shadow-lg border border-white/20 backdrop-blur-md bg-white/10">
-        <h1 className="text-3xl font-bold text-secondary font-secondary">
-          MY JOURNEY OF HAPPINESS
-        </h1>
-        <h1 className="text-4xl font-semibold text-primary font-tertiary">
-          Experiences
-        </h1>
-        <Timeline className="w-full" position="alternate">
+      <div className="flex flex-col w-full items-center justify-center rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl transition-all duration-300 md:w-10/12 lg:w-8/12">
+        <div className="flex flex-col items-center gap-4 text-center">
+          <h1 className="font-secondary text-3xl font-bold text-secondary">
+            MY JOURNEY OF HAPPINESS
+          </h1>
+          <h1 className="font-tertiary text-4xl font-semibold text-white drop-shadow-md">
+            Experiences
+          </h1>
+        </div>
+
+        <Timeline className="mt-8 w-full" position="alternate">
           {experiences.map((exp, index) => (
             <TimelineEntry key={index} {...exp} />
           ))}

@@ -15,16 +15,20 @@ const useScrollVisibility = (threshold = 50, direction: Direction = "top") => {
       let shouldShow = true;
       switch (direction) {
         case "top":
-          shouldShow = currentScrollY <= lastScrollY || currentScrollY < threshold;
+          shouldShow =
+            currentScrollY <= lastScrollY || currentScrollY < threshold;
           break;
         case "bottom":
-          shouldShow = currentScrollY >= lastScrollY || currentScrollY < threshold;
+          shouldShow =
+            currentScrollY >= lastScrollY || currentScrollY < threshold;
           break;
         case "left":
-          shouldShow = currentScrollX <= lastScrollX || currentScrollX < threshold;
+          shouldShow =
+            currentScrollX <= lastScrollX || currentScrollX < threshold;
           break;
         case "right":
-          shouldShow = currentScrollX >= lastScrollX || currentScrollX < threshold;
+          shouldShow =
+            currentScrollX >= lastScrollX || currentScrollX < threshold;
           break;
       }
 

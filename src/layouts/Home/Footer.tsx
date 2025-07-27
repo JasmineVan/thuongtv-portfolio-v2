@@ -10,15 +10,17 @@ const Footer = () => {
 
   return (
     <div
-      className="w-full h-auto flex flex-col justify-center items-center bg-no-repeat bg-fill bg-center"
-      style={{
-        // backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo6})`,
-      }}
+      className="bg-fill flex h-auto w-full flex-col items-center justify-center bg-center bg-no-repeat"
+      style={
+        {
+          // backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo6})`,
+        }
+      }
     >
-      <div className="w-10/12 flex flex-row justify-between py-16">
+      <div className="flex w-10/12 flex-row justify-between py-16">
         {/* Left group */}
-        <div className="flex flex-row gap-12 items-center">
-          <h1 className="font-semibold text-xl text-primary font-primary">
+        <div className="flex flex-row items-center gap-12">
+          <h1 className="font-primary text-xl font-semibold text-primary">
             Trinh Van Thuong
           </h1>
           <Divider
@@ -26,7 +28,7 @@ const Footer = () => {
             variant="middle"
             style={{ background: "#38745a", height: "80%" }}
           />
-          <h1 className="font-semibold text-sm text-primary font-primary">
+          <h1 className="font-primary text-sm font-semibold text-primary">
             Personal website
           </h1>
         </div>
@@ -35,7 +37,7 @@ const Footer = () => {
           {menuItems.map((item, index) => (
             <h1
               key={index}
-              className="text-sm text-primary font-semibold cursor-pointer hover:text-secondary"
+              className="cursor-pointer text-sm font-semibold text-primary hover:text-secondary"
             >
               {item}
             </h1>
@@ -44,7 +46,7 @@ const Footer = () => {
       </div>
 
       {/* Start divider */}
-      <div className="w-10/12 flex flex-row gap-12 justify-center">
+      <div className="flex w-10/12 flex-row justify-center gap-12">
         <Divider
           variant="middle"
           flexItem
@@ -52,16 +54,16 @@ const Footer = () => {
         />
       </div>
       {/* End divider */}
-      <div className="w-10/12 flex flex-row justify-between pt-4 pb-16">
+      <div className="flex w-10/12 flex-row justify-between pb-16 pt-4">
         {/* Left group */}
-        <div className="flex flex-row gap-8 items-center">
-          <h1 className="font-light text-sm text-primary font-primary">
+        <div className="flex flex-row items-center gap-8">
+          <h1 className="font-primary text-sm font-light text-primary">
             Copyright © 2025 Trinh Van Thuong. All rights reserved.
           </h1>
-          <h1 className="font-light text-sm text-primary hover:cursor-pointer  hover:text-secondary font-primary">
+          <h1 className="font-primary text-sm font-light text-primary hover:cursor-pointer hover:text-secondary">
             Email: thuongtrinh.work@gmail.com
           </h1>
-          <h1 className="font-light text-sm text-primary hover:cursor-pointer hover:text-secondary font-primary">
+          <h1 className="font-primary text-sm font-light text-primary hover:cursor-pointer hover:text-secondary">
             Phone: (+84) 345 282 532
           </h1>
         </div>

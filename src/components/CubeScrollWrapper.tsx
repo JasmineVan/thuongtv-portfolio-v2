@@ -34,11 +34,11 @@ const CubeScrollWrapper: React.FC<CubeScrollWrapperProps> = ({ sections }) => {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden perspective-[1200px] bg-black">
+    <div className="perspective-[1200px] relative h-screen w-full overflow-hidden bg-black">
       {sections.map((section, i) => (
         <div
           key={i}
-          className="absolute top-0 left-0 w-full h-full transition-transform duration-700 ease-in-out"
+          className="absolute left-0 top-0 h-full w-full transition-transform duration-700 ease-in-out"
           style={{
             transform: `rotateX(${(i - index) * 90}deg) translateZ(500px)`,
             opacity: i === index ? 1 : 0,

@@ -193,20 +193,14 @@ const ProjectComponent = ({
   tech,
   description,
 }: (typeof projects)[0] & { icon: ReactNode }) => (
-  <div
-    className="group flex flex-col gap-2 w-auto h-auto py-2 border-2 border-slate-200 rounded-xl 
-transition-all duration-300 hover:shadow-lg hover:shadow-secondary/50 hover:border-secondary hover:-translate-y-2 bg-white"
-  >
-    <div
-      className="rounded-full bg-secondary w-16 h-16 flex items-center justify-center m-4 
-    transition-all duration-300"
-    >
+  <div className="group flex h-auto w-auto flex-col gap-2 rounded-xl border-2 border-slate-200 bg-white py-2 transition-all duration-300 hover:-translate-y-2 hover:border-secondary hover:shadow-lg hover:shadow-secondary/50">
+    <div className="m-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary transition-all duration-300">
       {icon}
     </div>
-    <h1 className="text-2xl font-bold text-primary px-4 group-hover:text-secondary">
+    <h1 className="px-4 text-2xl font-bold text-primary group-hover:text-secondary">
       {name}
     </h1>
-    <h1 className="text-xl font-light text-secondary px-4">{role}</h1>
+    <h1 className="px-4 text-xl font-light text-secondary">{role}</h1>
     {/* Technical stacks */}
     <Stack direction="row" spacing={1} className="px-4">
       {tech.map(({ name, bg, text }, index) => (
@@ -218,8 +212,8 @@ transition-all duration-300 hover:shadow-lg hover:shadow-secondary/50 hover:bord
         />
       ))}
     </Stack>
-    <p className="text-justify text-primary px-4 font-primary">{description}</p>
-    <h1 className="font-semibold cursor-pointer text-primary px-4 group-hover:text-secondary font-primary">
+    <p className="px-4 text-justify font-primary text-primary">{description}</p>
+    <h1 className="cursor-pointer px-4 font-primary font-semibold text-primary group-hover:text-secondary">
       See more ➝
     </h1>
     {/* Top-Right image for demo - Will make it later */}
@@ -229,21 +223,23 @@ transition-all duration-300 hover:shadow-lg hover:shadow-secondary/50 hover:bord
 const Project = () => {
   return (
     <div
-      className="flex justify-center py-32 bg-no-repeat bg-cover bg-center"
-      style={{
-        // backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo5})`,
-      }}
+      className="flex justify-center bg-cover bg-center bg-no-repeat py-32"
+      style={
+        {
+          // backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo5})`,
+        }
+      }
     >
       {/* Layout 12 cols, 10 working cols */}
-      <div className="w-10/12 h-auto flex flex-col items-center justify-between gap-4">
-        <h1 className="text-3xl font-bold text-secondary font-secondary">
+      <div className="flex h-auto w-10/12 flex-col items-center justify-between gap-4">
+        <h1 className="font-secondary text-3xl font-bold text-secondary">
           MY SHOWCASE
         </h1>
-        <h1 className="text-4xl font-semibold text-primary font-tertiary">
+        <h1 className="font-tertiary text-4xl font-semibold text-primary">
           Spotlight projects
         </h1>
         {/* Project cards */}
-        <div className="grid grid-cols-3 gap-6 w-full">
+        <div className="grid w-full grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <ProjectComponent key={index} {...project} />
           ))}

@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 
-const FlipOnScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const FlipOnScroll: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -9,7 +11,7 @@ const FlipOnScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => 
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
 
@@ -21,7 +23,7 @@ const FlipOnScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 transform ${
+      className={`transform transition-all duration-700 ${
         visible ? "rotate-y-0 opacity-100" : "rotate-y-90 opacity-0"
       }`}
       style={{

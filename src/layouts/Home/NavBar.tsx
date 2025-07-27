@@ -14,24 +14,24 @@ const NavBar = () => {
       initial={{ y: 0 }}
       animate={{ y: isVisible ? 0 : "-100%" }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/30 border-b border-white/20 shadow-lg"
+      className="fixed top-0 z-50 w-full border-b border-white/20 bg-white/30 shadow-lg backdrop-blur-md"
     >
-      <div className="w-full h-16 flex items-center justify-between px-4 md:px-8">
+      <div className="flex h-16 w-full items-center justify-between px-4 md:px-8">
         {/* Logo */}
         <div className="flex items-center">
           <img
             src={SiteImage}
             alt="SiteImage"
-            className="w-12 h-12 object-contain hover:cursor-pointer"
+            className="h-12 w-12 object-contain hover:cursor-pointer"
           />
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden items-center gap-8 md:flex">
           {navItems.map((item, index) => (
             <h1
               key={index}
-              className="text-base text-white font-semibold hover:text-secondary hover:cursor-pointer font-primary transition duration-200"
+              className="font-primary text-base font-semibold text-white transition duration-200 hover:cursor-pointer hover:text-secondary"
             >
               {item}
             </h1>
@@ -40,7 +40,10 @@ const NavBar = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white"
+          >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -48,11 +51,11 @@ const NavBar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="md:hidden flex flex-col items-start px-4 py-2 bg-white/30 backdrop-blur-md border-t border-white/20 shadow-md">
+        <div className="flex flex-col items-start border-t border-white/20 bg-white/30 px-4 py-2 shadow-md backdrop-blur-md md:hidden">
           {navItems.map((item, index) => (
             <h1
               key={index}
-              className="py-2 text-base text-white font-semibold hover:text-secondary hover:cursor-pointer font-primary w-full"
+              className="w-full py-2 font-primary text-base font-semibold text-white hover:cursor-pointer hover:text-secondary"
             >
               {item}
             </h1>

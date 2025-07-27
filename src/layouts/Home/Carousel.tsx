@@ -9,46 +9,52 @@ import Ca3Image from "../../assets/Home/ca3.jpg";
 
 const Carousel = () => {
   return (
-    <Swiper
-      style={
-        {
-          "--swiper-navigation-color": "#f9627d",
-          "--swiper-pagination-color": "#f9627d",
-        } as React.CSSProperties
-      }
-      modules={[Autoplay, Navigation, Pagination]}
-      //   navigation
-      pagination={{ clickable: true }}
-      loop
-      spaceBetween={20}
-      slidesPerView={1}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
-    >
-      <SwiperSlide>
-        <img
-          src={Ca1Image}
-          alt="Slide 1"
-          className="w-full h-auto max-h-[800px] object-cover"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src={Ca2Image}
-          alt="Slide 2"
-          className="w-full h-auto max-h-[800px] object-cover"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src={Ca3Image}
-          alt="Slide 3"
-          className="w-full h-auto max-h-[800px] object-cover"
-        />
-      </SwiperSlide>
-    </Swiper>
+    <div className="relative h-full w-full">
+      {/* Swiper Background */}
+      <Swiper
+        style={
+          {
+            "--swiper-navigation-color": "#f9627d",
+            "--swiper-pagination-color": "#f9627d",
+          } as React.CSSProperties
+        }
+        modules={[Autoplay, Navigation, Pagination]}
+        pagination={{ clickable: true }}
+        loop
+        spaceBetween={20}
+        slidesPerView={1}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        className="h-full w-full"
+      >
+        <SwiperSlide>
+          <img
+            src={Ca1Image}
+            alt="Slide 1"
+            className="h-full w-full object-cover"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={Ca2Image}
+            alt="Slide 2"
+            className="h-full w-full object-cover"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={Ca3Image}
+            alt="Slide 3"
+            className="h-full w-full object-cover"
+          />
+        </SwiperSlide>
+      </Swiper>
+
+      {/* Glassmorphism Overlay */}
+      <div className="pointer-events-none absolute inset-0 rounded-none bg-white/10 backdrop-blur-xl" />
+    </div>
   );
 };
 
