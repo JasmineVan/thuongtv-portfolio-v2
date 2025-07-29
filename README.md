@@ -1,16 +1,26 @@
 # thuongtv-portfolio-v2
+
 ## Install dependencies
+
 ```bash
 npm install
 ```
 
-## Run 
+## Run
+
 ```bash
 npm start
 ```
 
 ## Deployment to Github page
+
 ```bash
 npm run build
 npm run deploy
+```
+
+## Manual Format All
+
+```bash
+npx prettier . --write
 ```

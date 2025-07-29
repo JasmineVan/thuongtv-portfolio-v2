@@ -1,88 +1,107 @@
+import { getRandomESG } from "../../utils/getRandomESGImage";
 import Divider from "@mui/material/Divider";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import Geo6 from "../../assets/Geometry/Geo6.svg";
+
+const randomImage = getRandomESG();
 
 const Footer = () => {
   const menuItems = ["Home", "About", "Project", "Blog", "Career", "Contact"];
 
   return (
     <div
-      className="w-full h-auto flex flex-col justify-center items-center bg-no-repeat bg-fill bg-center"
-      style={{
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${Geo6})`,
-      }}
+      className="relative flex h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20"
+      style={{ backgroundImage: `url(${randomImage})` }}
     >
-      <div className="w-10/12 flex flex-row justify-between py-16">
-        {/* Left group */}
-        <div className="flex flex-row gap-12 items-center">
-          <h1 className="font-semibold text-xl text-primary font-primary">
-            Trinh Van Thuong
-          </h1>
-          <Divider
-            orientation="vertical"
-            variant="middle"
-            style={{ background: "#38745a", height: "80%" }}
-          />
-          <h1 className="font-semibold text-sm text-primary font-primary">
-            Personal website
-          </h1>
-        </div>
-        {/* Right group */}
-        <div className="flex flex-row justify-between gap-12">
+      <div className="glassmorphism flex w-full max-w-7xl flex-col items-center justify-center gap-12 rounded-3xl border border-white/20 bg-white/10 p-10 shadow-2xl backdrop-blur-xl md:p-16">
+        {/* Signature Name */}
+        <h1
+          className="text-center font-secondary text-4xl font-bold text-white drop-shadow-lg md:text-5xl"
+          style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+        >
+          Trinh Van Thuong
+        </h1>
+        <p
+          className="text-center font-primary text-base text-white/80 md:text-lg"
+          style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+        >
+          Empowering Ideas | Engineering Solutions | Exploring Possibilities
+        </p>
+
+        {/* Navigation */}
+        <div className="flex flex-wrap justify-center gap-6">
           {menuItems.map((item, index) => (
             <h1
               key={index}
-              className="text-sm text-primary font-semibold cursor-pointer hover:text-secondary"
+              className="cursor-pointer font-primary text-sm font-medium text-white/70 transition-all hover:text-secondary"
+              style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
             >
               {item}
             </h1>
           ))}
         </div>
-      </div>
 
-      {/* Start divider */}
-      <div className="w-10/12 flex flex-row gap-12 justify-center">
-        <Divider
-          variant="middle"
-          flexItem
-          style={{ background: "#38745a", width: "100%" }}
-        />
-      </div>
-      {/* End divider */}
-      <div className="w-10/12 flex flex-row justify-between pt-4 pb-16">
-        {/* Left group */}
-        <div className="flex flex-row gap-8 items-center">
-          <h1 className="font-light text-sm text-primary font-primary">
-            Copyright © 2025 Trinh Van Thuong. All rights reserved.
-          </h1>
-          <h1 className="font-light text-sm text-primary hover:cursor-pointer  hover:text-secondary font-primary">
-            Email: thuongtrinh.work@gmail.com
-          </h1>
-          <h1 className="font-light text-sm text-primary hover:cursor-pointer hover:text-secondary font-primary">
-            Phone: (+84) 345 282 532
-          </h1>
+        {/* Divider */}
+        <Divider style={{ background: "#ffffff30", width: "100%" }} />
+
+        {/* Contact Info */}
+        <div className="flex flex-col items-center gap-3 text-center">
+          <p
+            className="font-primary text-sm text-white/70"
+            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+          >
+            Email:{" "}
+            <span className="hover:text-secondary">
+              thuongtrinh.work@gmail.com
+            </span>
+          </p>
+          <p
+            className="font-primary text-sm text-white/70"
+            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+          >
+            Phone:{" "}
+            <span className="hover:text-secondary">(+84) 345 282 532</span>
+          </p>
+          <p
+            className="font-primary text-xs text-white/50"
+            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+          >
+            © 2025 Trinh Van Thuong. All rights reserved.
+          </p>
         </div>
-        {/* Right group */}
-        <div className="flex flex-row justify-between gap-8">
-          <FacebookIcon
-            style={{ fill: "#38745a" }}
-            className="hover:cursor-pointer"
-          />
-          <LinkedInIcon
-            style={{ fill: "#38745a" }}
-            className="hover:cursor-pointer"
-          />
-          <GitHubIcon
-            style={{ fill: "#38745a" }}
-            className="hover:cursor-pointer"
-          />
-          <YouTubeIcon
-            style={{ fill: "#38745a" }}
-            className="hover:cursor-pointer"
-          />
+
+        {/* Social Icons */}
+        <div className="mt-4 flex gap-6">
+          <a
+            href="https://www.facebook.com/TrinhThuong2001/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FacebookIcon className="text-white transition-all hover:text-secondary" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/thuong-trinh-van/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LinkedInIcon className="text-white transition-all hover:text-secondary" />
+          </a>
+          <a
+            href="https://github.com/JasmineVan"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitHubIcon className="text-white transition-all hover:text-secondary" />
+          </a>
+          <a
+            href="https://www.youtube.com/@thuongtrinhvan2001"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <YouTubeIcon className="text-white transition-all hover:text-secondary" />
+          </a>
         </div>
       </div>
     </div>
