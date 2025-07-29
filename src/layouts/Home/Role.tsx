@@ -1,8 +1,10 @@
+import { ReactNode } from "react";
+import { getRandomESG } from "../../utils/getRandomESGImage";
 import StorageIcon from "@mui/icons-material/Storage";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import { ReactNode } from "react";
-import BnW1 from "../../assets/BnW/BnW13.jpg";
+
+const randomImage = getRandomESG();
 
 const roles = [
   {
@@ -34,10 +36,18 @@ const RoleComponent = ({
     <div className="m-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary transition-all duration-300">
       {icon}
     </div>
-    <h1 className="px-4 font-primary text-2xl font-bold text-primary group-hover:text-secondary">
+    <h1
+      className="px-4 font-primary text-2xl font-bold text-white/90 group-hover:text-secondary"
+      style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+    >
       {position}
     </h1>
-    <p className="px-4 text-justify font-primary text-primary">{description}</p>
+    <p
+      className="px-4 text-justify font-primary text-white/90"
+      style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+    >
+      {description}
+    </p>
   </div>
 );
 
@@ -45,16 +55,17 @@ const Role = () => {
   return (
     <div
       className="flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20"
-      style={{
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(${BnW1})`,
-      }}
+      style={{ backgroundImage: `url(${randomImage})` }}
     >
       {/* Layout 12 cols, 10 working cols */}
-      <div className="flex h-auto w-10/12 flex-col items-center justify-between gap-4">
+      <div className="mt-16 flex h-auto w-10/12 flex-col items-center justify-between gap-4">
         <h1 className="font-secondary text-3xl font-bold text-secondary">
           MULTI-FACETED TECH PROFESSIONAL
         </h1>
-        <h1 className="font-tertiary text-4xl font-semibold text-primary">
+        <h1
+          className="font-tertiary text-4xl font-semibold text-white/90"
+          style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+        >
           Role & Position
         </h1>
         {/* Role cards */}

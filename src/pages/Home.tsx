@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import NavBar from "../layouts/Home/NavBar";
-import Carousel from "../layouts/Home/Carousel";
 import Footer from "../layouts/Home/Footer";
 import FixedMenu from "../layouts/Home/FixedMenu";
 import About from "../layouts/Home/About";
@@ -13,7 +12,7 @@ import CubeScrollWrapper from "../components/CubeScrollWrapper";
 
 const Home: React.FC = () => {
   const sections = [
-    <Carousel key="carousel" />,
+    // <Carousel key="carousel" />,
     <About key="about" />,
     <Experience key="experience" />,
     <Role key="role" />,
