@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { getRandomESG } from "../../utils/getRandomESGImage";
 import Blog1 from "../../assets/Blog/blog1.jpg";
 import Blog2 from "../../assets/Blog/blog2.jpg";
@@ -6,16 +7,52 @@ import Author from "../../assets/Home/jasmine.jpeg";
 
 const randomImage = getRandomESG();
 
+/* Motion variants */
+const shellV = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.12,
+    },
+  },
+};
+const headerV = {
+  hidden: { opacity: 0, y: -16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+const cardV = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+const ctaV = {
+  hidden: { opacity: 0, scale: 0.95 },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+};
+
 const BlogCard = ({
   image,
   title,
   summary,
+  index,
 }: {
   image: string;
   title: string;
   summary: string;
+  index: number;
 }) => (
-  <div className="group flex w-full flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-secondary/50 md:w-1/3">
+  <motion.div
+    variants={cardV}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
+    transition={{ delay: index * 0.05 }}
+    className="group flex w-full flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-secondary/50"
+  >
     <img
       src={image}
       alt={title}
@@ -34,73 +71,103 @@ const BlogCard = ({
         Thuong Trinh Van
       </h1>
     </div>
-    <h1
+    <h2
       className="font-primary text-xl font-bold text-white group-hover:text-secondary"
       style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
     >
       {title}
-    </h1>
+    </h2>
     <p
       className="text-justify font-primary text-white/90"
       style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
     >
       {summary}
     </p>
-    <h1
-      className="cursor-pointer font-primary font-semibold text-white group-hover:text-secondary"
+    <button
+      className="w-fit cursor-pointer font-primary font-semibold text-white transition-colors group-hover:text-secondary"
       style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+      aria-label={`Read more: ${title}`}
     >
       Read more ➝
-    </h1>
-  </div>
+    </button>
+  </motion.div>
 );
 
 const Blog = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <div
-      className="flex justify-center bg-cover bg-center bg-no-repeat px-4 py-32"
+      className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 pb-10 pt-16"
       style={{ backgroundImage: `url(${randomImage})` }}
     >
-      <div className="flex h-auto w-full max-w-7xl flex-col items-center gap-8 rounded-3xl p-6">
-        <h1 className="text-center font-secondary text-3xl font-bold text-secondary">
-          STATE-OF-THE-ART BLOG
-        </h1>
-        <h1
-          className="text-center font-tertiary text-4xl font-semibold text-white drop-shadow-md"
-          style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
-        >
-          Technical blog
-        </h1>
+      {/* Readability overlay */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),rgba(0,0,0,0.55))]"
+        initial={{ opacity: prefersReducedMotion ? 0.45 : 0 }}
+        animate={{ opacity: 0.45 }}
+        transition={{
+          duration: prefersReducedMotion ? 0 : 1.0,
+          ease: "easeOut",
+        }}
+      />
+
+      <motion.div
+        variants={shellV}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.22 }}
+        className="relative z-10 flex h-auto w-full max-w-7xl flex-col items-center gap-8 rounded-3xl p-6"
+      >
+        {/* Heading */}
+        <motion.div variants={headerV} className="text-center">
+          <h1 className="font-secondary text-2xl font-bold text-secondary sm:text-3xl">
+            STATE-OF-THE-ART BLOG
+          </h1>
+          <h2
+            className="font-tertiary text-3xl font-semibold text-white drop-shadow-md sm:text-4xl"
+            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+          >
+            Technical blog
+          </h2>
+        </motion.div>
 
         {/* Cards */}
-        <div className="flex w-full flex-col gap-6 md:flex-row">
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <BlogCard
             image={Blog1}
             title="Breaking Down the Basics of Cloud Computing"
             summary="Understanding Cloud Infrastructure and Its Role in Modern Tech Solutions"
+            index={0}
           />
           <BlogCard
             image={Blog2}
             title="The Future of Artificial Intelligence in Everyday Life"
             summary="How AI is Transforming Industries, from Healthcare to Finance now a day."
+            index={1}
           />
           <BlogCard
             image={Blog3}
             title="The Evolution of Technology: From Web 1.0 to Web 3.0"
             summary="A Journey Through the Key Innovations Shaping the Internet of Tomorrow"
+            index={2}
           />
         </div>
 
         {/* CTA */}
-        <div className="group mt-6 cursor-pointer rounded-xl border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-md transition-all duration-300 hover:bg-white">
-          <h1
+        <motion.div
+          variants={ctaV}
+          className="group mt-2 cursor-pointer rounded-xl border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-md transition-all duration-300 hover:bg-white"
+        >
+          <h3
             className="font-primary font-semibold text-white group-hover:text-secondary"
             style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
           >
             View all blog
-          </h1>
-        </div>
-      </div>
+          </h3>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

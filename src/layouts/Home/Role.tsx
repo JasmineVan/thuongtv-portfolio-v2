@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { getRandomESG } from "../../utils/getRandomESGImage";
 import StorageIcon from "@mui/icons-material/Storage";
 import BarChartIcon from "@mui/icons-material/BarChart";
@@ -27,54 +28,106 @@ const roles = [
   },
 ];
 
-const RoleComponent = ({
+// motion variants
+const containerV = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.12,
+    },
+  },
+};
+const headerV = {
+  hidden: { opacity: 0, y: -20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+const cardV = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const RoleCard = ({
   icon,
   position,
   description,
 }: (typeof roles)[0] & { icon: ReactNode }) => (
-  <div className="group flex h-96 w-1/3 flex-col gap-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-secondary hover:shadow-lg hover:shadow-secondary/50">
-    <div className="m-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary transition-all duration-300">
+  <motion.div
+    variants={cardV}
+    className="group flex h-full flex-col gap-3 rounded-xl border border-white/20 bg-white/10 p-5 shadow-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-secondary hover:shadow-2xl hover:shadow-secondary/40"
+  >
+    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary shadow-md">
       {icon}
     </div>
-    <h1
-      className="px-4 font-primary text-2xl font-bold text-white/90 group-hover:text-secondary"
-      style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+    <h3
+      className="font-primary text-xl font-bold text-white/95 group-hover:text-secondary sm:text-2xl"
+      style={{ textShadow: "2px 2px 6px rgba(0,0,0,.5)" }}
     >
       {position}
-    </h1>
+    </h3>
     <p
-      className="px-4 text-justify font-primary text-white/90"
-      style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+      className="text-justify font-primary text-sm text-white/90 sm:text-base"
+      style={{ textShadow: "2px 2px 6px rgba(0,0,0,.45)" }}
     >
       {description}
     </p>
-  </div>
+  </motion.div>
 );
 
 const Role = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <div
-      className="flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20"
+      className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 pb-10 pt-16"
       style={{ backgroundImage: `url(${randomImage})` }}
     >
-      {/* Layout 12 cols, 10 working cols */}
-      <div className="mt-16 flex h-auto w-10/12 flex-col items-center justify-between gap-4">
-        <h1 className="font-secondary text-3xl font-bold text-secondary">
-          MULTI-FACETED TECH PROFESSIONAL
-        </h1>
-        <h1
-          className="font-tertiary text-4xl font-semibold text-white/90"
-          style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+      {/* readability overlay */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),rgba(0,0,0,0.55))]"
+        initial={{ opacity: prefersReducedMotion ? 0.45 : 0 }}
+        animate={{ opacity: 0.45 }}
+        transition={{
+          duration: prefersReducedMotion ? 0 : 1.0,
+          ease: "easeOut",
+        }}
+      />
+
+      <motion.div
+        variants={containerV}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        className="relative z-10 flex w-full max-w-7xl flex-col items-center gap-6 rounded-3xl border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-md md:p-10"
+      >
+        {/* header */}
+        <motion.div
+          variants={headerV}
+          className="flex flex-col items-center gap-2 text-center"
         >
-          Role & Position
-        </h1>
-        {/* Role cards */}
-        <div className="flex w-full flex-row justify-between gap-6">
-          {roles.map((role, index) => (
-            <RoleComponent key={index} {...role} />
+          <h1 className="font-secondary text-2xl font-bold text-secondary sm:text-3xl">
+            MULTI-FACETED TECH PROFESSIONAL
+          </h1>
+          <h2
+            className="font-tertiary text-3xl font-semibold text-white/95 sm:text-4xl"
+            style={{ textShadow: "2px 2px 6px rgba(0,0,0,.5)" }}
+          >
+            Role &amp; Position
+          </h2>
+        </motion.div>
+
+        {/* responsive grid */}
+        <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {roles.map((role, idx) => (
+            <RoleCard key={idx} {...role} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,13 +1,12 @@
 import SiteImage from "../../assets/Home/jasmine-trans.png";
 import { motion } from "framer-motion";
 import useScrollVisibility from "../../hooks/useScrollVisibility";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 const NavBar = () => {
-  const navItems = ["Home", "About", "Project", "Blog", "Career", "Contact"];
   const isVisible = useScrollVisibility(50, "top");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Edit your quote here
+  const quote = "Good for environment - Good for society - Good for us.";
 
   return (
     <motion.div
@@ -17,51 +16,31 @@ const NavBar = () => {
       className="fixed top-0 z-50 w-full border-b border-white/20 bg-white/30 shadow-lg backdrop-blur-md"
     >
       <div className="flex h-16 w-full items-center justify-between px-4 md:px-8">
-        {/* Logo */}
+        {/* Logo (left) */}
         <div className="flex items-center">
           <img
             src={SiteImage}
-            alt="SiteImage"
-            className="h-12 w-12 object-contain hover:cursor-pointer"
+            alt="Site logo"
+            className="h-12 w-12 object-contain"
           />
         </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((item, index) => (
-            <h1
-              key={index}
-              className="font-primary text-base font-semibold text-white transition duration-200 hover:cursor-pointer hover:text-secondary"
-            >
-              {item}
-            </h1>
-          ))}
-        </div>
+        {/* Quote (center) */}
+        <motion.p
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          aria-label="site-quote"
+          className="flex-1 px-3 text-center font-primary text-[12px] leading-tight text-white/90 drop-shadow sm:text-sm md:text-base lg:text-lg"
+          style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+          title={quote}
+        >
+          {quote}
+        </motion.p>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white"
-          >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+        {/* Spacer to keep quote centered (same width as logo area) */}
+        <div className="h-12 w-12" />
       </div>
-
-      {/* Mobile Dropdown Menu */}
-      {isMenuOpen && (
-        <div className="flex flex-col items-start border-t border-white/20 bg-white/30 px-4 py-2 shadow-md backdrop-blur-md md:hidden">
-          {navItems.map((item, index) => (
-            <h1
-              key={index}
-              className="w-full py-2 font-primary text-base font-semibold text-white hover:cursor-pointer hover:text-secondary"
-            >
-              {item}
-            </h1>
-          ))}
-        </div>
-      )}
     </motion.div>
   );
 };

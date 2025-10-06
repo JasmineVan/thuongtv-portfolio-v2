@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { getRandomESG } from "../../utils/getRandomESGImage";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -32,78 +32,135 @@ const experiences = [
   { period: "To the future", title: "", description: "" },
 ];
 
+// Animation helpers
+const containerV = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const headerV = {
+  hidden: { opacity: 0, y: -20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const itemV = (dir: "left" | "right") => ({
+  hidden: { opacity: 0, x: dir === "left" ? -50 : 50 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+});
+
 const TimelineEntry = ({
   period,
   title,
   description,
   index,
-}: (typeof experiences)[0] & { index: number }) => (
-  <TimelineItem>
-    <TimelineSeparator>
-      <TimelineDot className="bg-secondary" />
-      <TimelineConnector />
-    </TimelineSeparator>
-    <TimelineContent>
-      <motion.div
-        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, delay: index * 0.15 }}
-      >
-        <h1 className="font-primary text-xl italic text-secondary">{period}</h1>
-        {title && (
-          <h1
-            className="font-primary text-2xl font-bold text-white drop-shadow"
-            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
-          >
-            {title}
-          </h1>
-        )}
-        {description && (
-          <p
-            className="text-justify font-primary text-white/90"
-            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
-          >
-            {description}
-          </p>
-        )}
-      </motion.div>
-    </TimelineContent>
-  </TimelineItem>
-);
+}: (typeof experiences)[0] & { index: number }) => {
+  const from = index % 2 === 0 ? "left" : "right";
+  return (
+    <TimelineItem>
+      <TimelineSeparator>
+        <motion.div
+          initial={{ scale: 0.6, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{
+            type: "spring",
+            stiffness: 220,
+            damping: 18,
+            delay: index * 0.08,
+          }}
+        >
+          <TimelineDot className="bg-secondary" />
+        </motion.div>
+        <TimelineConnector />
+      </TimelineSeparator>
+
+      <TimelineContent>
+        <motion.div
+          variants={itemV(from as "left" | "right")}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ delay: index * 0.08 }}
+        >
+          <h3 className="font-primary text-base italic text-secondary sm:text-lg">
+            {period}
+          </h3>
+
+          {title && (
+            <h4
+              className="font-primary text-xl font-bold text-white drop-shadow sm:text-2xl"
+              style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
+            >
+              {title}
+            </h4>
+          )}
+
+          {description && (
+            <p
+              className="text-justify font-primary text-sm text-white/90 sm:text-base"
+              style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.45)" }}
+            >
+              {description}
+            </p>
+          )}
+        </motion.div>
+      </TimelineContent>
+    </TimelineItem>
+  );
+};
 
 const Experience = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <div
-      className="flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-20"
+      className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 pb-8 pt-16"
       style={{ backgroundImage: `url(${randomImage})` }}
     >
+      {/* Readability overlay on top of random image */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mt-16 flex w-full flex-col items-center justify-center rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-md transition-all duration-300 md:w-10/12 lg:w-8/12"
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),rgba(0,0,0,0.55))]"
+        initial={{ opacity: prefersReducedMotion ? 0.45 : 0 }}
+        animate={{ opacity: 0.45 }}
+        transition={{
+          duration: prefersReducedMotion ? 0 : 1.1,
+          ease: "easeOut",
+        }}
+      />
+
+      <motion.div
+        variants={containerV}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.22 }}
+        className="relative z-10 mt-12 flex w-full flex-col items-center justify-center rounded-3xl border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-md md:w-10/12 md:p-10 lg:w-8/12"
       >
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center gap-4 text-center"
+          variants={headerV}
+          className="flex flex-col items-center gap-2 text-center"
         >
-          <h1 className="font-secondary text-3xl font-bold text-secondary">
+          <h1 className="font-secondary text-2xl font-bold text-secondary sm:text-3xl">
             MY JOURNEY OF HAPPINESS
           </h1>
-          <h1
-            className="font-tertiary text-4xl font-semibold text-white drop-shadow-md"
+          <h2
+            className="font-tertiary text-3xl font-semibold text-white drop-shadow-md sm:text-4xl"
             style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
           >
             Experiences
-          </h1>
+          </h2>
         </motion.div>
 
-        <Timeline className="mt-8 w-full" position="alternate">
+        <Timeline className="mt-6 w-full sm:mt-8" position="alternate">
           {experiences.map((exp, index) => (
             <TimelineEntry key={index} {...exp} index={index} />
           ))}
