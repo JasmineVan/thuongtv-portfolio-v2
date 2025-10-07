@@ -83,8 +83,8 @@ const Footer = () => {
             className="mt-2 font-primary text-sm text-white/80 md:text-lg"
             style={{ textShadow: "2px 2px 6px rgba(0,0,0,.45)" }}
           >
-            Good Deeds | Diligent | Ethical | Wisdom | Willpower | Beneficent |
-            Grateful | Harmony
+            Good Deeds ☘︎ Diligent ☘︎ Ethical ☘︎ Wisdom ☘︎ Willpower ☘︎
+            Beneficent ☘︎ Grateful ☘︎ Harmony
           </p>
         </motion.div>
 

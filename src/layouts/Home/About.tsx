@@ -28,8 +28,8 @@ const About = () => {
   };
 
   const rightV = {
-    hidden: { opacity: 0, x: -50 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: -20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   const btnV = {
@@ -100,7 +100,7 @@ const About = () => {
           </h1>
 
           <h2
-            className="font-tertiary text-2xl font-semibold text-white sm:text-3xl md:text-4xl"
+            className="mb-4 font-tertiary text-2xl font-semibold text-white sm:text-3xl md:text-4xl"
             style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
           >
             Trinh Van Thuong (Jasmine)
@@ -130,7 +130,7 @@ const About = () => {
           </p>
 
           {/* Button */}
-          <motion.div variants={btnV} className="mt-2">
+          {/* <motion.div variants={btnV} className="mt-2">
             <button
               onClick={handleDownload}
               className="group rounded-xl border border-white/30 bg-white/20 px-6 py-3 font-primary text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:border-secondary hover:bg-white hover:text-secondary sm:text-base"
@@ -138,7 +138,7 @@ const About = () => {
             >
               Resume
             </button>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </motion.div>
     </div>

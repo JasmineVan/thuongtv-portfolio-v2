@@ -94,7 +94,7 @@ const projects = [
 ];
 
 /* Motion variants */
-const shellV = {
+const containerV = {
   hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
@@ -103,14 +103,16 @@ const shellV = {
       duration: 0.8,
       ease: "easeOut",
       when: "beforeChildren",
-      staggerChildren: 0.1,
+      staggerChildren: 0.12,
     },
   },
 };
+
 const headerV = {
-  hidden: { opacity: 0, y: -16 },
+  hidden: { opacity: 0, y: -20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
+
 const cardV = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -177,27 +179,27 @@ const Project = () => {
 
   return (
     <div
-      className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 pb-10 pt-16"
+      className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 pb-8 pt-16"
       style={{ backgroundImage: `url(${randomImage})` }}
     >
-      {/* Readability overlay for random images */}
+      {/* Readability overlay on top of random image */}
       <motion.div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.28),rgba(0,0,0,0.55))]"
         initial={{ opacity: prefersReducedMotion ? 0.45 : 0 }}
         animate={{ opacity: 0.45 }}
         transition={{
-          duration: prefersReducedMotion ? 0 : 1.0,
+          duration: prefersReducedMotion ? 0 : 1.1,
           ease: "easeOut",
         }}
       />
 
       <motion.div
-        variants={shellV}
+        variants={containerV}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.22 }}
-        className="relative z-10 flex w-full max-w-7xl flex-col items-center gap-6"
+        className="relative z-10 mt-12 flex w-full flex-col items-center justify-center rounded-3xl border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-md md:w-10/12 md:p-10 lg:w-8/12"
       >
         {/* Header */}
         <motion.div
@@ -208,8 +210,8 @@ const Project = () => {
             MY SHOWCASE
           </h1>
           <h2
-            className="font-tertiary text-3xl font-semibold text-white sm:text-4xl"
-            style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.5)" }}
+            className="mb-4 font-tertiary text-3xl font-semibold text-white drop-shadow-md sm:text-4xl"
+            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
           >
             Spotlight Projects
           </h2>

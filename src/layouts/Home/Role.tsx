@@ -83,7 +83,7 @@ const Role = () => {
 
   return (
     <div
-      className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 pb-10 pt-16"
+      className="relative flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 pb-8 pt-16"
       style={{ backgroundImage: `url(${randomImage})` }}
     >
       {/* readability overlay */}
@@ -93,7 +93,7 @@ const Role = () => {
         initial={{ opacity: prefersReducedMotion ? 0.45 : 0 }}
         animate={{ opacity: 0.45 }}
         transition={{
-          duration: prefersReducedMotion ? 0 : 1.0,
+          duration: prefersReducedMotion ? 0 : 1.1,
           ease: "easeOut",
         }}
       />
@@ -102,10 +102,9 @@ const Role = () => {
         variants={containerV}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className="relative z-10 flex w-full max-w-7xl flex-col items-center gap-6 rounded-3xl border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-md md:p-10"
+        viewport={{ once: true, amount: 0.22 }}
+        className="relative z-10 mt-12 flex w-full flex-col items-center justify-center rounded-3xl border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-md md:w-10/12 md:p-10 lg:w-8/12"
       >
-        {/* header */}
         <motion.div
           variants={headerV}
           className="flex flex-col items-center gap-2 text-center"
@@ -114,8 +113,8 @@ const Role = () => {
             MULTI-FACETED TECH PROFESSIONAL
           </h1>
           <h2
-            className="font-tertiary text-3xl font-semibold text-white/95 sm:text-4xl"
-            style={{ textShadow: "2px 2px 6px rgba(0,0,0,.5)" }}
+            className="mb-4 font-tertiary text-3xl font-semibold text-white drop-shadow-md sm:text-4xl"
+            style={{ textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)" }}
           >
             Role &amp; Position
           </h2>

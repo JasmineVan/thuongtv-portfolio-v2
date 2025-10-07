@@ -65,7 +65,7 @@ const Interest = () => {
             LET’S BUILD SOMETHING REMARKABLE TOGETHER
           </h1>
           <h2
-            className="font-tertiary text-3xl font-semibold text-white/95 sm:text-4xl"
+            className="mb-4 font-tertiary text-3xl font-semibold text-white/95 sm:text-4xl"
             style={{ textShadow: "2px 2px 6px rgba(0,0,0,.5)" }}
           >
             Collaboration turns ideas into impact.
@@ -87,7 +87,7 @@ const Interest = () => {
           Interested in working with me?
         </motion.h2>
 
-        <motion.button
+        {/* <motion.button
           variants={ctaV}
           className="group mt-4 rounded-2xl border border-white/30 bg-white/10 px-8 py-3 font-primary text-base font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white hover:text-secondary sm:px-10 sm:py-4 sm:text-lg"
           style={{ textShadow: "2px 2px 6px rgba(0,0,0,.4)" }}
@@ -97,7 +97,7 @@ const Interest = () => {
           }
         >
           Contact now
-        </motion.button>
+        </motion.button> */}
       </motion.div>
     </div>
   );

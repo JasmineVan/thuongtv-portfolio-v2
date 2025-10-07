@@ -17,13 +17,13 @@ const NavBar = () => {
     >
       <div className="flex h-16 w-full items-center justify-between px-4 md:px-8">
         {/* Logo (left) */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <img
             src={SiteImage}
             alt="Site logo"
             className="h-12 w-12 object-contain"
           />
-        </div>
+        </div> */}
 
         {/* Quote (center) */}
         <motion.p

@@ -9,7 +9,6 @@ import Role from "../layouts/Home/Role";
 import Project from "../layouts/Home/Project";
 import Blog from "../layouts/Home/Blog";
 import CubeScrollWrapper from "../components/CubeScrollWrapper";
-import GlassCursor from "../components/GlassCursor";
 import ScrollArrow from "../components/ScrollArrow";
 
 const baseSections = [
@@ -34,11 +33,18 @@ const Home: React.FC = () => {
       ).flat(),
     [],
   );
+  // Only mount cursor on devices with a real mouse
+  const isDesktop =
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   return (
-    <div className="hide-scrollbar hide-native-cursor relative h-screen w-full overflow-y-scroll">
-      <GlassCursor />
+    <div
+      className="hide-scrollbar hide-native-cursor relative h-screen w-full overflow-y-scroll"
+      style={{ WebkitOverflowScrolling: "touch" }}
+    >
+      {/* {isDesktop && <GlassCursor />} */}
       <NavBar />
-      <CubeScrollWrapper sections={sections} />
+      {isDesktop && <CubeScrollWrapper sections={sections} />}
       <div className="">
         {sections.map((section, idx) => (
           <div key={idx}>{section}</div>
